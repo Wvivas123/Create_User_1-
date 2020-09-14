@@ -1,10 +1,17 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+require('dotenv/config');
 const app = express();
-const port = 3000;
-const path = require('path');
+const postsRoute = require('./routes/posts');
+const cors = require('cors');
 
-app.use(express.static('public'));
+app.use(cors());
+app.use(bodyParser.json());
+app.use('/', postsRoute);
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+mongoose.connect(process.env.DB_CONNECTON, { useUnifiedTopology: true }, () => {
+  console.log('connected to DB');
 });
+
+app.listen(3000);

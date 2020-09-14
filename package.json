@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon script.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/Wvivas123/Create_User_1-/issues"
   },
-  "homepage": "https://github.com/Wvivas123/Create_User_1-#readme"
+  "homepage": "https://github.com/Wvivas123/Create_User_1-#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "mongoose": "^5.10.4"
+  }
 }
